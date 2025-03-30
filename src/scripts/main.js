@@ -1,18 +1,6 @@
 'use strict';
 
-const HEADING_TO_FIND = 'position';
-
-function findColIndex(tableElement, str) {
-  const theadCells = tableElement.querySelector('thead tr').children;
-
-  for (let i = 0; i < theadCells.length; i++) {
-    if (theadCells[i].textContent.toLowerCase() === str) {
-      return i;
-    }
-  }
-
-  return -1;
-}
+const HEADING_INDEX = 1;
 
 function copyColumn(element, index) {
   if (index === -1) {
@@ -37,6 +25,5 @@ function copyColumn(element, index) {
 }
 
 const table = document.querySelector('table');
-const headingIndex = findColIndex(table, HEADING_TO_FIND);
 
-copyColumn(table, headingIndex);
+copyColumn(table, HEADING_INDEX);
